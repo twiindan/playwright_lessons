@@ -1,0 +1,32 @@
+You can run a single test file:
+
+    pytest <filename>
+
+Also is possible run a whole directory
+
+    pytest <directory>
+
+If you want to execute tests by keyword expression:
+
+    pytest -k <keyword>
+
+    For example
+
+    pytest -k 'test_initial_check'
+    pytest -k 'TestClass'
+
+To run a specific test:
+
+    pytest 01_test_pytest_basics.py::test_initialCheck
+
+To run a specific Test Class:
+    pytest 04_test_pytest_fixtures_scopes_2.py::TestClass
+
+To run a test inside a Test Class:
+    pytest 04_test_pytest_fixtures_scopes_2.py::TestClass::test_second_class_check
+
+To run a test with some mark:
+    pytest <filename or directory> -m <tag>
+
+Print the output during tests:
+    pytest -s
