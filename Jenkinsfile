@@ -13,7 +13,7 @@ pipeline {
       stage('Execute tests') {
          steps {
             sh '''
-                python -m pytest playwright/test_playwright_fixtures.py
+                python3 -m pytest playwright/test_playwright_fixtures.py
                 '''
          }
       }
