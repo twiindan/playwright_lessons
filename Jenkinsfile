@@ -1,10 +1,11 @@
 pipeline {
-    agent { docker { image 'python:3.13.1-alpine3.21' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'python --version'
-            }
-        }
-    }
+   agent { docker { image 'mcr.microsoft.com/playwright/python:v1.49.1-noble' } }
+   stages {
+      stage('e2e-tests') {
+         steps {
+            sh 'pip install -r requirements.txt'
+            sh 'pytest'
+         }
+      }
+   }
 }

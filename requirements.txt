@@ -1,0 +1,10 @@
+allure-pytest
+allure-python-commons
+playwright
+pytest
+pytest-base-url
+pytest-playwright
+pytest-playwright-visual
+pytest-html
+faker
+setuptools
