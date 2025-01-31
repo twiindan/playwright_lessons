@@ -3,6 +3,7 @@ pipeline {
    stages {
       stage('Install dependencies') {
          steps {
+             sh 'apt install python3.12-venv'
              sh '''
                 python3 -m venv venv
                 source venv/bin/activate
