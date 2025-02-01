@@ -23,6 +23,7 @@ pipeline {
                      jdk: '',
                      results: [[path: 'allure-results']]
                 }
+         }
       }
    }
 }
