@@ -13,7 +13,7 @@ pipeline {
       stage('Execute tests') {
          steps {
             sh '''
-                python3 -m pytest playwright/test_playwright_fixtures.py
+                SELENIUM_REMOTE_URL=http://127.0.0.1:4444 python3 -m pytest framework/test_with_faker.py
                 '''
          }
       }
