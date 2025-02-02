@@ -1,6 +1,6 @@
 from playwright.sync_api import Page
 
-
+URL = 'https://forumhtml.azurewebsites.net/v1.0/demo'
 '''
 One method to find resources in DOM is using CSS Selectors. The idea is use different techniques
 and tips to obtain a unique element in the webpage using CSS selectors.
@@ -24,7 +24,7 @@ input#displayed-text
 
 
 def test_playwright_css_by_id(page: Page):
-    page.goto('http://localhost:8000/v1.0/demo')
+    page.goto(URL)
     open_window_button = page.locator('input[id=displayed-text]')
     print(open_window_button.is_visible())
 
@@ -46,7 +46,7 @@ input.displayed-class
 
 
 def test_playwright_css_by_class(page: Page):
-    page.goto('http://localhost:8000/v1.0/demo')
+    page.goto(URL)
     open_window_button = page.locator('.displayed-class')
     print(open_window_button.is_visible())
 
@@ -85,7 +85,7 @@ input[class*='inputs'] --> 2 matching element
 
 
 def test_playwright_css_wildcards(page: Page):
-    page.goto('http://localhost:8000/v1.0/demo')
+    page.goto(URL)
     open_window_button = page.locator("input[class='inputs']")
     print(open_window_button.is_visible())
 
@@ -110,7 +110,7 @@ fieldset>input#name
 
 
 def test_playwright_css_childrens(page: Page):
-    page.goto('http://localhost:8000/v1.0/demo')
+    page.goto(URL)
     open_window_button = page.locator("fieldset>table")
     print(open_window_button.is_visible())
 

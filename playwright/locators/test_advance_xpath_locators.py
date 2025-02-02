@@ -1,5 +1,6 @@
 from playwright.sync_api import Page
 
+URL = 'https://arnaumarch.com/'
 
 '''
 One method to find resources in DOM is using XPATH. The idea is use different techniques
@@ -23,13 +24,13 @@ Example
 
 
 def test_playwright_complete_xpath(page: Page):
-    page.goto('https://arnaumarch.com/')
+    page.goto(URL)
     open_window_button = page.locator('//div[@id="main-content"]/section[1]/header/menu/a')
     print(open_window_button.is_visible())
 
 
 def test_playwright_nested_xpath(page: Page):
-    page.goto('https://arnaumarch.com/')
+    page.goto(URL)
     open_window_button = page.locator('//div[@id="main-content"]//menu/a')
     print(open_window_button.is_visible())
 
@@ -42,13 +43,13 @@ Be careful:
 
 
 def test_playwright_complete_xpath_one_result(page: Page):
-    page.goto('https://arnaumarch.com/')
+    page.goto(URL)
     open_window_button = page.locator('//div[@id="main-content"]/section[2]/div/article[2]/header')
     print(open_window_button.is_visible())
 
 
 def test_playwright_nested_xpath_more_than_one_result(page: Page):
-    page.goto('https://arnaumarch.com/')
+    page.goto(URL)
     open_window_button = page.locator('//div[@id="main-content"]/section[2]//header')
     print(open_window_button.is_visible())
     # strict mode violation. Locators are strict.
@@ -72,7 +73,7 @@ Also can use hierarchy:
 
 
 def test_playwright_complete_xpath_by_text(page: Page):
-    page.goto('https://arnaumarch.com/')
+    page.goto(URL)
     open_window_button = page.locator('//header[text()="About me"]')
     print(open_window_button.is_visible())
 
@@ -93,19 +94,19 @@ Several conditions can be used to matching:
 
 
 def test_playwright_xpath_contains_text(page: Page):
-    page.goto('https://arnaumarch.com/')
+    page.goto(URL)
     open_window_button = page.locator('//div[@id="main-content"]//header[contains(text(), "About me")]')
     print(open_window_button.is_visible())
 
 
 def test_playwright_xpath_contains_class_name_failing(page: Page): #fail
-    page.goto('https://arnaumarch.com/')
+    page.goto(URL)
     open_window_button = page.locator('//div[@id="main-content"]//a[contains(@class, "button")]')
     print(open_window_button.is_visible())
 
 
 def test_playwright_xpath_contains_combined(page: Page):
-    page.goto('https://arnaumarch.com/')
+    page.goto(URL)
     open_window_button = page.locator('//div[@id="main-content"]//a[contains(@class, "button") and '
                                                 'contains(@href, "https://twitter.com/rnowm/")]')
     print(open_window_button.is_visible())
@@ -121,6 +122,6 @@ Similar to contains function, XPATH also provide the starts-with function.
 
 
 def test_playwright_xpath_start_with(page: Page):
-    page.goto('https://arnaumarch.com/')
+    page.goto(URL)
     open_window_button = page.locator('//div[@id="main-content"]//h1[starts-with(text(), "Hi")]')
     print(open_window_button.is_visible())
