@@ -6,5 +6,6 @@ pytest-base-url
 pytest-playwright
 pytest-playwright-visual
 pytest-html
+pytest-xdist
 faker
 setuptools
