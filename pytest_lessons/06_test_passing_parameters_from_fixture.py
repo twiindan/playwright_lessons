@@ -1,6 +1,7 @@
 import pytest
 
 
+# Is possible define any function as a fixture and pass it as a parameter in a test.
 @pytest.fixture
 def setup():
     print("\nFirst setup")

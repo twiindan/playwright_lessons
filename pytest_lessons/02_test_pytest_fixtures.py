@@ -1,5 +1,6 @@
 import pytest
 
+# Setup is executed at the beginning of tests
 
 @pytest.fixture
 def setup():

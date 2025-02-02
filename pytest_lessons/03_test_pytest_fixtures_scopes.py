@@ -1,11 +1,13 @@
 import pytest
 
 
+# Function scope is executed at the beginning of every test
 @pytest.fixture(scope="function")
 def setup_function():
     print("\nFunction Setup")
 
 
+# Module scope is executed at the beginning of the module execution (once x module)
 @pytest.fixture(scope="module")
 def setup_module():
     print("\nModule setup")

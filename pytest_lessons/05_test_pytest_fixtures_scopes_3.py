@@ -1,6 +1,7 @@
 import pytest
 
 
+# Session scope is only executed one time at the beginning of test execution
 @pytest.fixture(scope='session')
 def setup_session():
     print("\nSession Setup")
