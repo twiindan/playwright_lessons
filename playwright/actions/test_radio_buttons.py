@@ -1,8 +1,11 @@
 from playwright.sync_api import Page, expect
 
 
+URL = 'https://forumhtml.azurewebsites.net/v1.0/demo'
+
+
 def test_radio_buttons(page: Page):
-    page.goto('http://localhost:8000/v1.0/demo')
+    page.goto(URL)
     page.locator('#windowsradio').check()
     expect(page.locator('#windowsradio')).to_be_checked()
     page.wait_for_timeout(1000)
@@ -15,7 +18,7 @@ def test_radio_buttons(page: Page):
 
 
 def test_checkbox(page: Page):
-    page.goto('http://localhost:8000/v1.0/demo')
+    page.goto(URL)
     page.locator('#windowscheck').check()
     expect(page.locator('#windowscheck')).to_be_checked()
     page.wait_for_timeout(1000)

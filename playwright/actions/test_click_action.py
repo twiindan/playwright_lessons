@@ -1,8 +1,10 @@
 from playwright.sync_api import Page
 
+URL = 'https://forumhtml.azurewebsites.net/v1.0/demo'
+
 
 def test_playwright_fill_text(page: Page):
-    page.goto('http://localhost:8000/v1.0/demo')
+    page.goto(URL)
     placeholder_text = page.get_by_placeholder('Enter Your Name')
     placeholder_text.fill('Toni Robres')
     page.wait_for_timeout(5000)
