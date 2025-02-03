@@ -7,6 +7,7 @@ from framework.models.task import Task
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.register_page import RegisterPage
+from pages.task_page import TaskPage
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -83,4 +84,23 @@ def login_with_auth(browser: Browser, random_user: User) -> Page:
     main_page.load()
 
     return page
+
+@pytest.fixture
+def login_page(page: Page):
+    return LoginPage(page)
+
+
+@pytest.fixture
+def main_page(page: Page):
+    return MainPage(page)
+
+
+@pytest.fixture
+def register_page(page: Page):
+    return RegisterPage(page)
+
+
+@pytest.fixture
+def task_page(page: Page):
+    return TaskPage(page)
 

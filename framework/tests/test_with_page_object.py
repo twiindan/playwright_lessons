@@ -26,4 +26,23 @@ def test_register_basic(page: Page, random_user: User) -> None:
     #assert the main page
     main_page = MainPage(page=page)
     expect(main_page.logout_button_locator).to_be_visible()
-    return MainPage
+
+
+def test_register_basic_with_fixtures(login_page: LoginPage, register_page: RegisterPage, main_page: MainPage,
+                                      random_user: User) -> None:
+
+    # Load login page
+    login_page.load()
+
+    # Navigate to register
+    login_page.go_to_register()
+
+    # register user
+    register_page.register_user(random_user)
+
+    # login user
+    login_page.login(random_user.username, random_user.password)
+
+    #assert the main page
+    expect(main_page.logout_button_locator).to_be_visible()
+
