@@ -56,3 +56,15 @@ pytest --screenshot retain-on-failure
 
 pytest --video on
 pytest --video retain-on-failure
+
+
+# Reporting HTML
+
+pip install pytest-html
+pytest --html=pytest_report.html
+
+
+# Reporting Allure
+
+pip install allure-pytest
+pytest --alluredir allure-results
