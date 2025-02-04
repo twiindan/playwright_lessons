@@ -1,8 +1,8 @@
 from playwright.sync_api import Page, expect
 
 from framework.models.task import Task
-from pages.main_page import MainPage
-from pages.task_page import TaskPage
+from framework.pages.main_page import MainPage
+from framework.pages.task_page import TaskPage
 
 
 def test_create_task(login: Page):

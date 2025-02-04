@@ -1,6 +1,6 @@
-from pages.login_page import LoginPage
-from pages.register_page import RegisterPage
-from pages.main_page import MainPage
+from framework.pages.login_page import LoginPage
+from framework.pages.register_page import RegisterPage
+from framework.pages.main_page import MainPage
 from framework.models.user import User
 
 

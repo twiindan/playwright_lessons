@@ -1,13 +1,13 @@
 import pytest
 from faker import Faker
-from playwright.sync_api import expect, Browser, Page
+from playwright.sync_api import Browser, Page
 
 from framework.models.user import User
 from framework.models.task import Task
-from pages.login_page import LoginPage
-from pages.main_page import MainPage
-from pages.register_page import RegisterPage
-from pages.task_page import TaskPage
+from framework.pages.login_page import LoginPage
+from framework.pages.main_page import MainPage
+from framework.pages.register_page import RegisterPage
+from framework.pages.task_page import TaskPage
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -78,7 +78,7 @@ def random_task() -> Task:
 @pytest.fixture(scope="session", autouse=True)
 def login_with_auth(browser: Browser, random_user: User) -> Page:
 
-    context = browser.new_context(storage_state="auth.json")
+    context = browser.new_context(storage_state="framework/tests/auth.json")
     page = context.new_page()
     main_page = MainPage(page)
     main_page.load()

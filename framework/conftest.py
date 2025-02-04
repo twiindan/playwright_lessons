@@ -1,7 +1,7 @@
 import pytest
 from faker import Faker
 
-from models.user import User
+from framework.models.user import User
 
 
 @pytest.fixture
