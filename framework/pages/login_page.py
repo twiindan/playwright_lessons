@@ -22,3 +22,6 @@ class LoginPage:
         self.username_locator.fill(username)
         self.password_locator.fill(password)
         self.login_button_locator.click()
+
+    def get_alert_locator(self):
+        return self.page.locator(".alert.alert-danger")
