@@ -11,4 +11,10 @@ def test_get_pop_up(page: Page):
     print(popup.url)
 
 
+def test_get_new_window(page: Page):
+    page.goto(URL)
+    with page.expect_popup() as popup_info:
+        page.locator("#openwindow").click()
+    popup = popup_info.value
+    print(popup.url)
 
