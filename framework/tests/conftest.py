@@ -75,15 +75,15 @@ def random_task() -> Task:
 #     return page
 
 
-@pytest.fixture(scope="session", autouse=True)
-def login_with_auth(browser: Browser, random_user: User) -> Page:
-
-    context = browser.new_context(storage_state="framework/tests/auth.json")
-    page = context.new_page()
-    main_page = MainPage(page)
-    main_page.load()
-
-    return page
+# @pytest.fixture(scope="session", autouse=True)
+# def login_with_auth(browser: Browser, random_user: User) -> Page:
+#
+#     context = browser.new_context(storage_state="framework/tests/auth.json")
+#     page = context.new_page()
+#     main_page = MainPage(page)
+#     main_page.load()
+#
+#     return page
 
 @pytest.fixture
 def login_page(page: Page):
@@ -104,3 +104,7 @@ def register_page(page: Page):
 def task_page(page: Page):
     return TaskPage(page)
 
+
+@pytest.fixture (scope='session')
+def user_credentials(request):
+    return request.param
