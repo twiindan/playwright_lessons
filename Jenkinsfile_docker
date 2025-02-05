@@ -7,6 +7,12 @@ pipeline {
                 pip3 install -r requirements.txt
                 python3 -m playwright install --with-deps
                 '''
+            sh '''
+                apt update
+                apt upgrade
+                apt-cache search openjdk-11
+                apt install openjdk-11-jdk
+               '''
          }
       }
       stage('Execute tests') {
