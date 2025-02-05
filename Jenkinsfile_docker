@@ -12,7 +12,7 @@ pipeline {
       stage('Execute tests') {
          steps {
             sh '''
-                python3 -m pytest framework/test_with_faker.py --alluredir allure-results
+                python3 -m pytest playwright/actions --tracing=retain-on-failure --alluredir ./allure-results --numprocesses 2
                 '''
          }
       }
