@@ -15,6 +15,14 @@ pipeline {
                 python3 -m pytest playwright/actions --tracing=retain-on-failure --alluredir ./allure-results --numprocesses 2
                 '''
          }
+         post {
+                always {
+                    allure includeProperties:
+                     false,
+                     jdk: '',
+                     results: [[path: 'allure-results']]
+                }
+         }
       }
    }
 }
