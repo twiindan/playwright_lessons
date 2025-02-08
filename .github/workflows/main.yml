@@ -7,7 +7,10 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: mcr.microsoft.com/playwright/python:v1.50.0-noble
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright/python:v1.50.0-noble
+      options: --user 1001
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python
