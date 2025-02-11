@@ -40,7 +40,7 @@ Example using Classes
 
 input[class=displayed-class]
 .displayed-class
-input.displayed-class
+.input.displayed-class
 
 '''
 
