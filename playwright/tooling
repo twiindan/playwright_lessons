@@ -68,3 +68,4 @@ pytest --html=pytest_report.html
 
 pip install allure-pytest
 pytest --alluredir allure-results
+allure serve allure-results
