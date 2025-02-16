@@ -6,7 +6,7 @@ from playwright.sync_api import Page, expect
 import pytest
 
 
-with open("../data/credentials.json") as credential_file:
+with open("framework/data/credentials.json") as credential_file:
     test_data = json.load(credential_file)
     user_credentials_list = test_data['user_credentials']
 
